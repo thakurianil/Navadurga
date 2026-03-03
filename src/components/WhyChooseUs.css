@@ -1,0 +1,133 @@
+.wcu-section {
+    background-color: var(--off-white);
+    padding: 100px 0;
+}
+
+.wcu-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.wcu-desc {
+    margin-left: 0;
+    max-width: 100%;
+}
+
+.wcu-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.wcu-feature-card {
+    padding: 24px;
+    border-radius: 16px;
+    transition: transform var(--transition-normal);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+}
+
+.wcu-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.wcu-icon-wrapper {
+    display: inline-flex;
+    padding: 12px;
+    background-color: rgba(0, 82, 204, 0.1);
+    color: var(--primary-blue);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.wcu-feature-title {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.wcu-feature-desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Image Side */
+.wcu-image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0, 82, 204, 0.1) 0%, rgba(0, 180, 216, 0.1) 100%);
+}
+
+.wcu-main-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    height: 600px;
+}
+
+.wcu-floating-card {
+    position: absolute;
+    bottom: 40px;
+    left: -30px;
+    padding: 20px 32px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+    border-left: 4px solid var(--primary-blue);
+}
+
+.wcu-card-number {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.wcu-card-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .wcu-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .wcu-image-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .wcu-main-img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wcu-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wcu-floating-card {
+        left: 20px;
+        right: 20px;
+        bottom: -20px;
+        align-items: center;
+        text-align: center;
+        border-left: none;
+        border-bottom: 4px solid var(--primary-blue);
+    }
+}

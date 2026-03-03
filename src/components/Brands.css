@@ -1,0 +1,106 @@
+.brands-section {
+    background-color: var(--off-white);
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.brands-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Fade effects on the edges */
+.brands-marquee-container::before,
+.brands-marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brands-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--off-white) 0%, transparent 100%);
+}
+
+.brands-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--off-white) 0%, transparent 100%);
+}
+
+.brands-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+}
+
+.brands-track:hover {
+    animation-play-state: paused;
+}
+
+.brand-logo-card {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: var(--white);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    cursor: default;
+}
+
+.brand-logo-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+}
+
+.brand-fallback-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.brand-logo-card:hover .brand-fallback-text {
+    opacity: 1;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 20px));
+    }
+
+    /* Half the width minus half the gap */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .brands-marquee-container::before,
+    .brands-marquee-container::after {
+        width: 60px;
+    }
+
+    .brand-logo-card {
+        width: 160px;
+        height: 80px;
+    }
+
+    .brand-fallback-text {
+        font-size: 1.25rem;
+    }
+}

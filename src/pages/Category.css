@@ -1,0 +1,142 @@
+.min-vh-70 {
+    min-height: 70vh;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mt-4 {
+    margin-top: 32px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    /* offset header */
+}
+
+.category-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 61, 153, 0.7);
+}
+
+.category-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.category-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.category-hero-desc {
+    font-size: 1.25rem;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+    color: var(--primary-blue);
+}
+
+.category-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.category-details-para {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.category-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.category-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.feature-icon {
+    color: var(--brand-cyan);
+}
+
+.category-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    height: 250px;
+    border: none;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .category-info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .category-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

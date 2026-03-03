@@ -1,0 +1,117 @@
+.reviews-section {
+    padding: 100px 0;
+    background-color: var(--off-white);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.review-card {
+    position: relative;
+    background-color: var(--white);
+    padding: 40px 30px 30px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0, 82, 204, 0.3);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: rgba(0, 82, 204, 0.1);
+    z-index: 1;
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.star-icon {
+    color: #d1d5db;
+    /* gray */
+}
+
+.star-icon.filled {
+    color: #f59e0b;
+    /* amber for filled stars */
+    fill: #f59e0b;
+}
+
+.review-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-blue) 100%);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.mt-5 {
+    margin-top: 48px;
+}
+
+.review-btn {
+    padding: 12px 32px;
+}
+
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}

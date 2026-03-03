@@ -1,0 +1,250 @@
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-gradient);
+    padding-top: 80px;
+    /* Account for fixed header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 50%, rgba(0, 82, 204, 0.05) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: rgba(0, 82, 204, 0.1);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0, 82, 204, 0.2);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 800;
+}
+
+.text-primary-gradient {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--brand-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    max-width: 540px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.hero-btn {
+    padding: 14px 32px;
+    font-size: 1.125rem;
+}
+
+.btn-icon {
+    margin-left: 8px;
+    transition: transform var(--transition-fast);
+}
+
+.hero-btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+.hero-trust {
+    display: flex;
+    gap: 32px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.trust-icon {
+    color: var(--accent);
+}
+
+/* Image visuals */
+.hero-visual {
+    position: relative;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: var(--shadow-hover);
+    position: relative;
+}
+
+.hero-image {
+    border-radius: 16px;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.floating-badge {
+    position: absolute;
+    background: var(--white);
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    animation: pulse-subtle 4s infinite ease-in-out;
+}
+
+.badge-1 {
+    bottom: 40px;
+    left: -30px;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    top: 40px;
+    right: -30px;
+    animation-delay: 2s;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.badge-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+@keyframes pulse-subtle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 40px auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-trust {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        padding: 0 20px;
+    }
+
+    .badge-1 {
+        left: 0;
+    }
+
+    .badge-2 {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .floating-badge {
+        display: none;
+        /* Hide floating badges on very small screens for better space management */
+    }
+}
