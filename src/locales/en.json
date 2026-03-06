@@ -1,0 +1,136 @@
+{
+  "header": {
+    "location": "Pokhara, Nepal",
+    "open_today": "Open Today: 9:00 AM - 6:30 PM",
+    "logo_primary": "Navadurga",
+    "logo_secondary": "Sanitaryware & Hardware",
+    "visit_store": "Visit Our Store"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "brands": "Brands",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Premium Quality Assured",
+    "title_start": "Elevating Spaces with",
+    "title_highlight": "Unmatched Quality",
+    "subtitle": "Welcome to Navadurga Sanitaryware & Hardware. We provide top-tier plumbing supplies, sanitary fittings, and durable hardware to build the home of your dreams.",
+    "btn_explore": "Explore Products",
+    "btn_visit": "Visit Our Store",
+    "trust_1": "100% Genuine",
+    "trust_2": "Authorized Dealer",
+    "badge_1_num": "10+",
+    "badge_1_text": "Years of Trust",
+    "badge_2_num": "Premium",
+    "badge_2_text": "Brands Available"
+  },
+  "about": {
+    "subtitle": "About Our Company",
+    "title_start": "Building Your Dreams With",
+    "title_highlight": "Trusted Quality",
+    "desc_1": "Located in the heart of Pokhara, Gandaki Province, Navadurga Sanitaryware & Hardware has been the go-to destination for homeowners, contractors, builders, and interior designers. We believe that every space deserves the best fitting, which is why we bring you products that combine aesthetics, functionality, and longevity.",
+    "desc_2": "Whether you are building a new home, renovating an existing space, or managing a large-scale commercial project, our comprehensive selection and industry expertise ensure you find exactly what you need.",
+    "features": [
+      "Premium quality products for lasting durability",
+      "Expert guidance and personalized customer support",
+      "Authorized dealers for top international brands",
+      "Wide range of sanitary and hardware selections"
+    ],
+    "btn_speak": "Speak to an Expert",
+    "est": "Est."
+  },
+  "products": {
+    "subtitle": "Our Offerings",
+    "title": "Explore Our Categories",
+    "desc": "Discover our wide range of premium quality sanitaryware and hardware products tailored for your needs.",
+    "btn_view": "View Collection"
+  },
+  "brands": {
+    "title": "Our Trusted Brands",
+    "subtitle": "We are proud authorized dealers of the most reputable brands in the industry, ensuring you get nothing but the best."
+  },
+  "reviews": {
+    "subtitle": "Testimonials",
+    "title": "What Our Customers Say",
+    "desc": "Don't just take our word for it. Here's what our valued clients have experienced with us.",
+    "btn_view_all": "View All Reviews"
+  },
+  "contact": {
+    "form_title": "Send Us a Message",
+    "form_subtitle": "Have a question about our products or need a quote? Fill out the form and our team will get back to you.",
+    "label_name": "Full Name",
+    "placeholder_name": "John Doe",
+    "label_email": "Email Address",
+    "placeholder_email": "john@example.com",
+    "label_phone": "Phone Number",
+    "placeholder_phone": "+977-98...",
+    "label_message": "Message",
+    "placeholder_message": "How can we help you?",
+    "btn_sending": "Sending...",
+    "btn_send": "Send Message",
+    "status_success": "Thank you! Your message has been sent successfully.",
+    "status_error": "Oops! Something went wrong. Please try again later.",
+    "quick_title": "Let's Discuss Your Project",
+    "quick_desc": "Whether you're renovating a single bathroom or supplying a large construction project, Navadurga Sanitaryware & Hardware has the right solutions for you.",
+    "whatsapp_title": "Chat with us on WhatsApp",
+    "whatsapp_desc": "Get instant replies from our sales team",
+    "whatsapp_btn": "Start Chat"
+  },
+  "footer": {
+    "desc": "Your trusted partner for premium sanitaryware, plumbing supplies, and durable hardware since 2010. Elevating spaces with quality you can rely on.",
+    "quick_links": "Quick Links",
+    "categories": "Categories",
+    "contact_info": "Contact Info",
+    "address": "Pokhara, Gandaki Province, Nepal",
+    "phone": "+977-9800000000 / 061-000000",
+    "email": "info@navadurga.com",
+    "hours": "Sun - Fri: 9:00 AM - 6:30 PM",
+    "rights": "Navadurga Sanitaryware & Hardware. All rights reserved.",
+    "developed_by": "Designed with ❤️ for Nepal"
+  },
+  "wcu": {
+    "subtitle": "Why Choose Us",
+    "title": "The Navadurga Advantage",
+    "desc": "With years of experience in the sanitaryware and hardware industry, we understand what it takes to build a durable and beautiful space. Our commitment to excellence sets us apart.",
+    "features": [
+      {
+        "title": "Trusted Brands",
+        "desc": "Authorized dealer for high-quality, internationally renowned brands."
+      },
+      {
+        "title": "Premium Quality",
+        "desc": "Products that stand the test of time with excellent durability."
+      },
+      {
+        "title": "Competitive Pricing",
+        "desc": "Get the best value for your investment with our fair pricing policy."
+      },
+      {
+        "title": "Reliable Service",
+        "desc": "Timely delivery and exceptional customer support before and after sales."
+      }
+    ],
+    "satisfaction_num": "100%",
+    "satisfaction_text": "Customer Satisfaction"
+  },
+  "location": {
+    "subtitle": "Find Us",
+    "title": "Visit Our Store",
+    "desc": "Experience our premium collection firsthand at our showroom in Pokhara.",
+    "store_name": "Navadurga Sanitaryware",
+    "address_line1": "Aalu Maila Chowk, Pokhara,",
+    "address_line2": "Gandaki Province, Nepal",
+    "btn_directions": "Get Directions"
+  },
+  "category": {
+    "not_found": "Category Not Found",
+    "btn_home": "Return Home",
+    "back_home": "Back to Home",
+    "about": "About our",
+    "btn_quote": "Request Quote"
+  }
+}

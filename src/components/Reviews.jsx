@@ -1,20 +1,21 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { reviewsData } from '../data/reviewsData';
 import './Reviews.css';
 
 const Reviews = () => {
-    // Only show the first 3 reviews on the landing page
+    const { t } = useTranslation();
     const displayReviews = reviewsData.slice(0, 3);
 
     return (
         <section id="reviews" className="section reviews-section bg-off-white">
             <div className="container">
-                <h4 className="section-subtitle-small text-center">Testimonials</h4>
-                <h2 className="section-title text-center">What Our Customers Say</h2>
+                <h4 className="section-subtitle-small text-center">{t('reviews.subtitle')}</h4>
+                <h2 className="section-title text-center">{t('reviews.title')}</h2>
                 <p className="section-subtitle text-center">
-                    Don't just take our word for it. Here's what our valued clients have experienced with us.
+                    {t('reviews.desc')}
                 </p>
 
                 <div className="reviews-grid">
@@ -45,7 +46,7 @@ const Reviews = () => {
 
                 <div className="text-center mt-5">
                     <Link to="/reviews" className="btn btn-secondary review-btn">
-                        View All Reviews
+                        {t('reviews.btn_view_all')}
                     </Link>
                 </div>
             </div>

@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Brands.css';
 
 const Brands = () => {
+    const { t } = useTranslation();
     const brandLogos = [
         { name: "Jaquar", fallback: "Jaquar", color: "#1a1a1a" },
         { name: "Panchakanya", fallback: "Panchakanya", color: "#d32f2f" },
@@ -13,9 +15,9 @@ const Brands = () => {
     return (
         <section id="brands" className="section brands-section">
             <div className="container">
-                <h2 className="section-title text-center">Our Trusted Brands</h2>
+                <h2 className="section-title text-center">{t('brands.title')}</h2>
                 <p className="section-subtitle">
-                    We are proud authorized dealers of the most reputable brands in the industry, ensuring you get nothing but the best.
+                    {t('brands.subtitle')}
                 </p>
 
                 <div className="brands-marquee-container">

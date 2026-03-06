@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
-import { Send, MessageCircle } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Send, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 import './Contact.css';
 
 const Contact = () => {
+    const { t } = useTranslation();
+    const form = useRef();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -16,9 +22,29 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate form submission
-        alert('Thank you for contacting us. We will get back to you shortly!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // Utilizing actual EmailJS credentials
+        emailjs.sendForm(
+            'service_ox5j6f7', // Example inferred mapping or placeholder ID
+            'template_g157jdf', // Example inferred mapping or placeholder ID
+            form.current,
+            '3fEnrrF1K42kCY57p' // Supplied public key
+        )
+            .then((result) => {
+                console.log(result.text);
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+            }, (error) => {
+                console.log(error.text);
+                setSubmitStatus('error');
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+                // Hide the status message after 5 seconds
+                setTimeout(() => setSubmitStatus(null), 5000);
+            });
     };
 
     return (
@@ -28,54 +54,60 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <div className="contact-form-wrapper glass">
-                        <h3 className="contact-form-title">Send Us a Message</h3>
+                        <h3 className="contact-form-title">{t('contact.form_title')}</h3>
                         <p className="contact-form-subtitle">
-                            Have a question about our products or need a quote? Fill out the form and our team will get back to you.
+                            {t('contact.form_subtitle')}
                         </p>
 
-                        <form onSubmit={handleSubmit} className="contact-form">
+                        <form ref={form} onSubmit={handleSubmit} className="contact-form">
                             <div className="form-group">
-                                <label htmlFor="name">Full Name</label>
+                                <label htmlFor="name">{t('contact.label_name')}</label>
                                 <input
                                     type="text"
                                     id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
+                                    name="user_name" // Changed to match typical EmailJS template variables
+                                    value={formData.user_name}
+                                    onChange={(e) => {
+                                        setFormData({ ...formData, user_name: e.target.value, name: e.target.value })
+                                    }}
                                     required
-                                    placeholder="John Doe"
+                                    placeholder={t('contact.placeholder_name')}
                                 />
                             </div>
 
                             <div className="form-row">
                                 <div className="form-group">
-                                    <label htmlFor="email">Email Address</label>
+                                    <label htmlFor="email">{t('contact.label_email')}</label>
                                     <input
                                         type="email"
                                         id="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
+                                        name="user_email" // Changed to match typical EmailJS template variables
+                                        value={formData.user_email}
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, user_email: e.target.value, email: e.target.value })
+                                        }}
                                         required
-                                        placeholder="john@example.com"
+                                        placeholder={t('contact.placeholder_email')}
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="phone">Phone Number</label>
+                                    <label htmlFor="phone">{t('contact.label_phone')}</label>
                                     <input
                                         type="tel"
                                         id="phone"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
+                                        name="user_phone" // Changed to match typical EmailJS template variables
+                                        value={formData.user_phone}
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, user_phone: e.target.value, phone: e.target.value })
+                                        }}
                                         required
-                                        placeholder="+977-98..."
+                                        placeholder={t('contact.placeholder_phone')}
                                     />
                                 </div>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="message">Message</label>
+                                <label htmlFor="message">{t('contact.label_message')}</label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -83,21 +115,40 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     rows="5"
-                                    placeholder="How can we help you?"
+                                    placeholder={t('contact.placeholder_message')}
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="btn btn-primary submit-btn">
-                                Send Message <Send size={18} />
+                            <button
+                                type="submit"
+                                className="btn btn-primary submit-btn"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? t('contact.btn_sending') : t('contact.btn_send')}
+                                {!isSubmitting && <Send size={18} />}
                             </button>
+
+                            {/* Status Messages */}
+                            {submitStatus === 'success' && (
+                                <div className="status-message success mt-4 p-3 bg-green-50 text-green-700 rounded-md flex items-center gap-2 border border-green-200" style={{ marginTop: '16px', padding: '12px', backgroundColor: '#ecfdf5', color: '#047857', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', border: '1px solid #a7f3d0' }}>
+                                    <CheckCircle size={20} />
+                                    <span>{t('contact.status_success')}</span>
+                                </div>
+                            )}
+                            {submitStatus === 'error' && (
+                                <div className="status-message error mt-4 p-3 bg-red-50 text-red-700 rounded-md flex items-center gap-2 border border-red-200" style={{ marginTop: '16px', padding: '12px', backgroundColor: '#fef2f2', color: '#b91c1c', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', border: '1px solid #fecaca' }}>
+                                    <AlertCircle size={20} />
+                                    <span>{t('contact.status_error')}</span>
+                                </div>
+                            )}
                         </form>
                     </div>
 
                     {/* Quick Contact CTA */}
                     <div className="quick-contact">
-                        <h2 className="section-title text-left text-white">Let's Discuss Your Project</h2>
+                        <h2 className="section-title text-left text-white">{t('contact.quick_title')}</h2>
                         <p className="quick-contact-desc text-white">
-                            Whether you're renovating a single bathroom or supplying a large construction project, Navadurga Sanitaryware & Hardware has the right solutions for you.
+                            {t('contact.quick_desc')}
                         </p>
 
                         <div className="whatsapp-card glass">
@@ -105,15 +156,15 @@ const Contact = () => {
                                 <MessageCircle size={32} />
                             </div>
                             <div className="whatsapp-content">
-                                <h4>Chat with us on WhatsApp</h4>
-                                <p>Get instant replies from our sales team</p>
+                                <h4>{t('contact.whatsapp_title')}</h4>
+                                <p>{t('contact.whatsapp_desc')}</p>
                                 <a
-                                    href="https://wa.me/9779800000000"
+                                    href="https://wa.me/0452348839"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn btn-accent whatsapp-btn"
                                 >
-                                    Start Chat
+                                    {t('contact.whatsapp_btn')}
                                 </a>
                             </div>
                         </div>

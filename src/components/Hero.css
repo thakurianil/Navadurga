@@ -15,7 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 70% 50%, rgba(0, 82, 204, 0.05) 0%, transparent 60%);
+    background: radial-gradient(circle at 70% 50%, rgba(107, 33, 168, 0.05) 0%, transparent 60%);
     z-index: 1;
 }
 
@@ -31,13 +31,13 @@
 .hero-badge {
     display: inline-block;
     padding: 6px 16px;
-    background-color: rgba(0, 82, 204, 0.1);
+    background-color: rgba(107, 33, 168, 0.1);
     color: var(--primary-blue);
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 24px;
-    border: 1px solid rgba(0, 82, 204, 0.2);
+    border: 1px solid rgba(107, 33, 168, 0.2);
 }
 
 .hero-title {
@@ -48,7 +48,7 @@
 }
 
 .text-primary-gradient {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--brand-cyan) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

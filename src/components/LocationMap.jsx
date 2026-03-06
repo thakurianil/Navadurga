@@ -1,31 +1,34 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './LocationMap.css';
 
 const LocationMap = () => {
+    const { t } = useTranslation();
+
     return (
         <section id="location" className="section map-section bg-white">
             <div className="container">
-                <h4 className="section-subtitle-small text-center">Find Us</h4>
-                <h2 className="section-title text-center">Visit Our Store</h2>
+                <h4 className="section-subtitle-small text-center">{t('location.subtitle')}</h4>
+                <h2 className="section-title text-center">{t('location.title')}</h2>
                 <p className="section-subtitle text-center">
-                    Experience our premium collection firsthand at our showroom in Pokhara.
+                    {t('location.desc')}
                 </p>
 
                 <div className="map-container glass">
                     <div className="map-overlay-card">
-                        <h3 className="map-card-title">Navadurga Sanitaryware</h3>
+                        <h3 className="map-card-title">{t('location.store_name')}</h3>
                         <div className="map-card-address">
                             <MapPin size={20} className="map-icon" />
-                            <span>Aalu Maila Chowk, Pokhara,<br />Gandaki Province, Nepal</span>
+                            <span>{t('location.address_line1')}<br />{t('location.address_line2')}</span>
                         </div>
                         <a
-                            href="https://www.google.com/maps/place/Navadurga+Sanitaryware+and+Hardware/@28.2177905,83.9837224,17z/data=!4m16!1m9!3m8!1s0x3995954091ecd0cd:0x8cf24278bd6d3e6e!2sNavadurga+Sanitaryware+and+Hardware!8m2!3d28.2177905!4d83.9837224!9m1!1b1!16s%2Fg%2F11rr5jt0hw!3m5!1s0x3995954091ecd0cd:0x8cf24278bd6d3e6e!8m2!3d28.2177905!4d83.9837224!16s%2Fg%2F11rr5jt0hw?entry=ttu"
+                            href="https://www.google.com/maps/place/Navadurga+Sanitaryware+and+Hardware/@28.2177905,83.9837224,17z/data=!4m16!1m9!3m8!1s0x3995954091ecd0cd:0x8cf24278bd6d3e6e!2sNavadurga+Sanitaryware+and+Hardware!8m2!3d28.2177905!4d83.9837224!9m1!1b1!16s%2Fg%2F11rr5jt0hw!3m5!1s0x3995954091ecd0cd:0x8cf24278bd6d3e6e!8m2!3d28.2177905!4d83.9837224!16s%2Fg%2F11rr5jt0hw?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary map-btn"
                         >
-                            Get Directions
+                            {t('location.btn_directions')}
                         </a>
                     </div>
 

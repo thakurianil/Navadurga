@@ -54,23 +54,13 @@
 
 .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-.logo-text-primary {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-blue);
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.logo-text-secondary {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-light);
-    letter-spacing: 0.05em;
+.logo-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Desktop Nav */
@@ -123,8 +113,40 @@
 
 @media (min-width: 992px) {
     .desktop-actions {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    padding: 0;
+}
+
+.lang-btn:hover {
+    color: var(--primary-blue);
+}
+
+.lang-btn.active {
+    color: var(--primary-blue);
+}
+
+.lang-divider {
+    color: var(--border-color);
 }
 
 /* Mobile Menu Toggle */
@@ -166,6 +188,19 @@
     padding: 0 24px;
 }
 
+.mobile-lang-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 15px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-lang-btn {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+}
+
 .mobile-nav-link {
     display: block;
     padding: 15px 0;
@@ -195,7 +230,7 @@
         height: 70px;
     }
 
-    .logo-text-primary {
-        font-size: 1.25rem;
+    .logo-image {
+        height: 45px;
     }
 }

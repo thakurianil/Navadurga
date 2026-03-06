@@ -17,23 +17,17 @@
 
 .footer-logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-image {
+    height: 130px;
+    width: auto;
+    object-fit: contain;
     margin-bottom: 20px;
-}
-
-.footer-logo .logo-text-primary {
-    font-size: 1.75rem;
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.footer-logo .logo-text-secondary {
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
+    background-color: var(--white);
+    padding: 12px;
+    border-radius: 8px;
 }
 
 .footer-desc {

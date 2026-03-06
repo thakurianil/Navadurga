@@ -1,18 +1,20 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { categoriesData } from '../data/categoriesData';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import './Category.css';
 
 const Category = () => {
+    const { t } = useTranslation();
     const { id } = useParams();
     const category = categoriesData.find(c => c.id === id);
 
     if (!category) {
         return (
             <div className="section min-vh-70 flex-center" style={{ marginTop: '80px' }}>
-                <h2>Category Not Found</h2>
-                <Link to="/" className="btn btn-primary mt-4">Return Home</Link>
+                <h2>{t('category.not_found')}</h2>
+                <Link to="/" className="btn btn-primary mt-4">{t('category.btn_home')}</Link>
             </div>
         );
     }
@@ -29,11 +31,11 @@ const Category = () => {
 
             <section className="section bg-white category-details-section">
                 <div className="container">
-                    <Link to="/" className="back-link"><ArrowLeft size={16} /> Back to Home</Link>
+                    <Link to="/" className="back-link"><ArrowLeft size={16} /> {t('category.back_home')}</Link>
 
                     <div className="category-info-grid mt-4">
                         <div className="category-text">
-                            <h2 className="section-title text-left">About our {category.name}</h2>
+                            <h2 className="section-title text-left">{t('category.about')} {category.name}</h2>
                             <p className="category-details-para">{category.details}</p>
                             <ul className="category-features-list">
                                 {category.features.map((feature, idx) => (
@@ -41,7 +43,7 @@ const Category = () => {
                                 ))}
                             </ul>
                             <div className="mt-4">
-                                <Link to="/#contact" className="btn btn-primary">Request Quote</Link>
+                                <Link to="/#contact" className="btn btn-primary">{t('category.btn_quote')}</Link>
                             </div>
                         </div>
 
