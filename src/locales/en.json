@@ -132,5 +132,51 @@
     "back_home": "Back to Home",
     "about": "About our",
     "btn_quote": "Request Quote"
+  },
+  "categories_data": {
+    "bathroom-fittings": {
+      "name": "Bathroom Fittings",
+      "desc": "Premium showers, faucets, and sanitaryware from global brands.",
+      "details": "Our Bathroom Fittings collection includes high-end ceramic washbasins, luxurious shower panels, elegant faucets, bathtubs, and modern commodes. Designed for durability and aesthetics, these products elevate your bathroom experience. We stock products from top brands like Jaquar, Hindware, and Cera.",
+      "features": [
+        "Corrosion-resistant finishes",
+        "Water-saving technology",
+        "Sleek and modern designs",
+        "Long-lasting warranty"
+      ]
+    },
+    "kitchen-fixtures": {
+      "name": "Kitchen Fixtures",
+      "desc": "Elegant sinks and kitchen plumbing solutions for the modern home.",
+      "details": "Transform your kitchen into a highly functional workspace with our premium kitchen fixtures. We offer single and double bowl stainless steel sinks, pull-out faucets, water purifiers, and under-sink plumbing systems. Built for heavy-duty daily use while keeping a sleek, minimalist aesthetic.",
+      "features": [
+        "Scratch-resistant quartz and steel sinks",
+        "Pull-down and touch-sensitive faucets",
+        "Space-saving plumbing traps",
+        "Easy-to-clean surfaces"
+      ]
+    },
+    "pipes-fittings": {
+      "name": "Pipes & Fittings",
+      "desc": "Durable CPVC, UPVC, and PPR pipes for all construction needs.",
+      "details": "The backbone of any building starts with reliable plumbing. We supply high-grade CPVC, UPVC, PVC, and PPR pipes along with complete fitting assortments (elbows, tees, reducers, valves). Trusted by top contractors for hot and cold water distribution as well as drainage systems.",
+      "features": [
+        "High pressure and temperature tolerance",
+        "Leak-proof joint systems",
+        "Authorized Panchakanya products",
+        "UV resistant for outdoor use"
+      ]
+    },
+    "hardware-tools": {
+      "name": "Hardware Tools",
+      "desc": "High-quality tools and construction materials.",
+      "details": "Equip your professionals with tools that don't let them down. From hand tools like wrenches, hammers, and screwdrivers to power tools, door handles, hinges, and basic construction materials, we offer robust hardware for carpenters, electricians, and plumbers.",
+      "features": [
+        "Heavy-duty forging",
+        "Ergonomic grips and safety features",
+        "Corrosion-resistant alloys",
+        "Comprehensive tool kits available"
+      ]
+    }
   }
 }

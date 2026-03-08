@@ -5,7 +5,7 @@ import './i18n.js'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <StrictMode>//remember to delete if it causes any issues related to Double rendering
     <App />
   </StrictMode>,
 )
