@@ -4,6 +4,7 @@ import About from '../components/About';
 import Brands from '../components/Brands';
 import Products from '../components/Products';
 import WhyChooseUs from '../components/WhyChooseUs';
+import ProjectShowcase from '../components/ProjectShowcase';
 import Reviews from '../components/Reviews';
 import LocationMap from '../components/LocationMap';
 import Contact from '../components/Contact';
@@ -16,6 +17,7 @@ const Home = () => {
             <Brands />
             <Products />
             <WhyChooseUs />
+            <ProjectShowcase />
             <Reviews />
             <LocationMap />
             <Contact />

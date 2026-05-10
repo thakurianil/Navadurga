@@ -6,10 +6,11 @@ const Brands = () => {
     const { t } = useTranslation();
     const brandLogos = [
         { name: "Jaquar", fallback: "Jaquar", color: "#1a1a1a" },
-        { name: "Panchakanya", fallback: "Panchakanya", color: "#d32f2f" },
-        { name: "Lisara", fallback: "Lisara", color: "#1976d2" },
+        { name: "Panchakanya", fallback: "Panchakanya Pipe Fittings", color: "#d32f2f" },
+        { name: "Berger", fallback: "Berger Paints", color: "#004b87" },
+        { name: "ANI", fallback: "ANI Tiles", color: "#4a4a4a" },
+        { name: "Laminam", fallback: "Laminam Surface Solutions", color: "#7f7f7f" },
         { name: "Cera", fallback: "Cera", color: "#e65100" },
-        { name: "Hindware", fallback: "Hindware", color: "#004d40" },
     ];
 
     return (
